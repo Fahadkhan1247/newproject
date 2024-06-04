@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+   
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/ec583ed39d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+  
+    
+    <style>
+.navbar {
+  width: 100%;
+  background-color: rgba(218, 165, 32, 0.821);
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: silver;
+}
+
+
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  background-color: goldenrod;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+#map {
+        height: 500px;
+        width: 100%;
+       }
+    </style>
+</head>
+<body background="https://media.istockphoto.com/id/1140850607/photo/black-marble-texture-with-gold-pattern-background-design-for-cover-book-or-brochure-poster-or.jpg?s=612x612&w=0&k=20&c=Pr93GMzVP8oXWo0xvE0L_wDv9vQHzlp8FePp4DAKNxQ=">
+    
+<!--starting of nav bar-->
+<div class="navbar">
+    <a class="active" href="index (1).html"> Home</a> 
+    <a href="aboutus (2).html"> About Us</a> 
+    <a href="SweetsProducts (5).html">Products Sweets</a> 
+    <a href="bake (2) (2).html"> Products Bakery</a>
+    <a href="GiftHamper (3).html"> Gift Hampers</a>
+    <a href="contactUs.html"> Contact Us</a>
+  </div>
+  <!--ending of nav bar-->
+
+    <!--starting of Contact section-->
+ <div class="container-fluid">
+    <div style="text-align:center">
+      <h1 style="color: white;"><i>Contact Us</i></h1>
+      <p style="color: white;">Swing by for a cup of coffee, or leave us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var Aptech = {
+              lat: 24.9289566,
+              lng: 67.0356264};
+            var abc = new google.maps.Map(document.getElementById('map'), {
+              zoom: 18,
+              center: Aptech
+            });
+            var marker = new google.maps.Marker({
+              position: Aptech,
+              map: abc
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg272BuCY-f0VDYyrc9O_1OYHXjDThoSQ
+    &callback=initMap">
+        </script>
+      </div>
+      <div class="column">
+        <form action="/action_page.php">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="usa">Pakistan</option>
+            <option value="usa">UK</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+<!--ending of Contact section-->
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<div >
+
+    <footer class="text-white text-center text-lg-start" style= "background-color: goldenrod;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4" style="color: black;">About company</h5>
+  
+           
+  
+            <p style="color: black;">
+              The London Sweets & Bakers is London's premier bakery, offering a wide selection of cakes, sweets, mithai, frozen food, and savory items.
+            </p>
+  
+            <div class="mt-4">
+              <!-- Facebook -->
+              <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
+              <!-- Dribbble -->
+              <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
+              <!-- Twitter -->
+              <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
+              <!-- Google + -->
+              <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
+              <!-- Linkedin -->
+            </div>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 pb-1" style="color: black;">Search something</h5>
+  
+            <div class="form-outline form-white mb-4">
+              <input type="text" id="formControlLg" class="form-control form-control-lg">
+              <label class="form-label" for="formControlLg" style="margin-left: 0px; color: black;" >Search</label>
+            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 48.8px;"></div><div class="form-notch-trailing"></div></div></div>
+  
+            <ul class="fa-ul" style="margin-left: 1.65em; color: black;">
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">94 York Road
+                  London
+                  SE03 9ZP</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">0207 581 9213</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">0207 581 9999</span>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4" style="color: black;">Opening hours</h5>
+  
+            <table class="table text-center text-white" style="color: black;">
+              <tbody class="font-weight-normal">
+                <tr>
+                  <td>Mon - Thu:</td>
+                  <td>8am - 9pm</td>
+                </tr>
+                <tr>
+                  <td>Fri - Sat:</td>
+                  <td>8am - 1am</td>
+                </tr>
+                <tr>
+                  <td>Sunday:</td>
+                  <td>9am - 10pm</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: black;">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">The London Sweets & Bakers</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    
+  </div>
+  <!-- End of .container -->
+  
+
+
+</body>
+</html>
